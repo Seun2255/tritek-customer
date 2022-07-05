@@ -59,6 +59,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border-left: 2px solid #9fc5f8;
 }
 
 .support__button {
