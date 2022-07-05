@@ -29,20 +29,28 @@ export default function Contact() {
               <Image alt="arrow" layout="fill" src={arrow} />
             </div>
           </button>
-          <button className={styles.menu__button}>
-            <span>FAQs</span>
-            <div className={styles.dropdown__arrow}>
-              <Image alt="arrow" layout="fill" src={arrow} />
-            </div>
-          </button>
-          <button className={styles.menu__button}>
-            <span className={styles.large__text}>Query Categories</span>
-            <div className={styles.dropdown__arrow}>
-              <Image alt="arrow" layout="fill" src={arrow} />
-            </div>
-          </button>
-          <button className={styles.menu__button__plain}>Track Query</button>
-          <button className={styles.menu__button__plain}>Feedback</button>
+          <Link href={"/FAQ"}>
+            <button className={styles.menu__button}>
+              <span>FAQs</span>
+              <div className={styles.dropdown__arrow}>
+                <Image alt="arrow" layout="fill" src={arrow} />
+              </div>
+            </button>
+          </Link>
+          <Link href={"/categories"}>
+            <button className={styles.menu__button}>
+              <span className={styles.large__text}>Query Categories</span>
+              <div className={styles.dropdown__arrow}>
+                <Image alt="arrow" layout="fill" src={arrow} />
+              </div>
+            </button>
+          </Link>
+          <Link href={"/track_query"}>
+            <button className={styles.menu__button__plain}>Track Query</button>
+          </Link>
+          <Link href={"/feedback"}>
+            <button className={styles.menu__button__plain}>Feedback</button>
+          </Link>
         </div>
       </main>
       <footer className={styles.footer}>
@@ -66,16 +74,4 @@ export default function Contact() {
       </footer>
     </div>
   );
-}
-
-{
-  /* <i
-                class="fa-brands fa-twitter"
-                style="
-                  color: white;
-                  width: 20px;
-                  height: 20px;
-                  margin-right: 10px;
-                "
-              ></i> */
 }
