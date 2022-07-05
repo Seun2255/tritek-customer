@@ -40,7 +40,9 @@ export default function Home() {
             <div className={styles.column__item}>Consulting</div>
             <div className={styles.column__item}>About Us</div>
             <div className={styles.column__item}>Succes Stories</div>
-            <div className={styles.column__item}>FAQ</div>
+            <div className={styles.column__item}>
+              <Link href={"/FAQ"}>FAQ</Link>
+            </div>
             <div className={styles.column__item}>Courses</div>
             <div className={styles.column__item}>Bulletin</div>
           </div>
@@ -52,7 +54,9 @@ export default function Home() {
             <div className={styles.column__item}>Cookies</div>
             <div className={styles.column__item}>Terms and Conditions</div>
             <div className={styles.column__item}>Privacy Policy</div>
-            <div className={styles.column__item}>Feedback</div>
+            <div className={styles.column__item}>
+              <Link href={"/feedback"}>Feedback</Link>
+            </div>
           </div>
           <div className={styles.footer__column}>
             <div className={styles.get__in__touch}>GET IN TOUCH</div>
