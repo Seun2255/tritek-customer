@@ -15,10 +15,11 @@ export default function FAQ() {
   const [menuOpen, setMenuOpen] = useState(false);
   const questions = [
     "Q. What does Tritek consulting do?",
-    "Q. Do you offer practical experience",
-    "Q. Can i pay for my course instalmentally?",
-    "Q. What is the cost of the program",
-    "Q. What is the mode of training",
+    "Tritek Consulting Limited specializes in providing a robust all-inclusive state-of-the-art career development training and certifications on a wide range of transitions in the following:",
+    "Business Analysis Change",
+    "Stakeholder Management",
+    "Project Management",
+    "Business Intelligence",
   ];
 
   return (

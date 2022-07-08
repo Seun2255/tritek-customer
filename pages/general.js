@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../styles/general.module.css";
+import styles from "../styles/commonStyle.module.css";
 import logo from "../assets/logo.png";
 import background from "../assets/general.png";
 import arrow from "../assets/arrow-drop-down.svg";
@@ -25,6 +25,19 @@ export default function General() {
         <div className={styles.home__buttons}>
           <button className={styles.menu__button__plain}>General</button>
         </div>
+        <div className={styles.query}>
+          <div className={styles.name__field}>
+            <div className={styles.name__label}>Name:</div>
+            <input className={styles.name__input} />
+          </div>
+          <div className={styles.query__field}>
+            <div className={styles.query__label}>General Query</div>
+            <textarea className={styles.query__input}></textarea>{" "}
+          </div>{" "}
+          <button className={styles.query__submit}>submit</button>
+        </div>
+      </main>
+      <footer className={styles.footer}>
         <div className={styles.social__links}>
           <div className={styles.icon}>
             <Image alt="arrow" layout="fill" src={youTube} />
@@ -42,7 +55,7 @@ export default function General() {
             <Image alt="arrow" layout="fill" src={facebook} />
           </div>
         </div>
-      </main>
+      </footer>
     </div>
   );
 }

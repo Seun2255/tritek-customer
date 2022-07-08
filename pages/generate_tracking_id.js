@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../styles/commonStyle.module.css";
+import styles from "../styles/generateTrackingId.module.css";
 import logo from "../assets/logo.png";
-import background from "../assets/training&mentorship.png";
+import background from "../assets/technical.png";
 import arrow from "../assets/arrow-drop-down.svg";
 import youTube from "../assets/icons/youtube-2.svg";
 import instagram from "../assets/icons/instagram.svg";
@@ -10,7 +10,7 @@ import facebook from "../assets/icons/facebook.svg";
 import twitter from "../assets/icons/twitter.svg";
 import linkedIn from "../assets/icons/linkedin.svg";
 
-export default function TrainingMentorship() {
+export default function GenerateTrackingId() {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
@@ -22,23 +22,13 @@ export default function TrainingMentorship() {
             <Image alt="logo" layout="fill" src={logo} />
           </div>
         </Link>
-        <div className={styles.home__buttons} style={{ width: "13em" }}>
-          <button className={styles.menu__button__plain}>
-            Training & Mentorship
-          </button>
-        </div>
-        <div className={styles.query}>
-          <div className={styles.name__field}>
-            <div className={styles.name__label}>Name:</div>
-            <input className={styles.name__input} />
+        <div className={styles.inner__div}>
+          <div className={styles.title}>
+            Generate Tracking ID: TRI2004651229 TEK
           </div>
-          <div className={styles.query__field}>
-            <div className={styles.query__label}>
-              Training & Mentorship Query
-            </div>
-            <textarea className={styles.query__input}></textarea>{" "}
-          </div>{" "}
-          <button className={styles.query__submit}>submit</button>
+          <div className={styles.details}>
+            Thank you for your query. Please allow up to 48 hrs before tracking.
+          </div>
         </div>
       </main>
       <footer className={styles.footer}>

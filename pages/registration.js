@@ -45,11 +45,11 @@ export default function Registration() {
           </button>
           {menuOpen && (
             <div className={styles.menu}>
-              {options.map((question, id) => {
+              {options.map((option, id) => {
                 return (
-                  <div key={id} className={styles.question}>
-                    {question}
-                  </div>
+                  <Link key={id} href={`/${option.toLowerCase()}`}>
+                    <div className={styles.question}>{option}</div>
+                  </Link>
                 );
               })}
             </div>

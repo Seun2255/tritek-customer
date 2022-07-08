@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/commonStyle.module.css";
 import logo from "../assets/logo.png";
-import background from "../assets/training&mentorship.png";
+import background from "../assets/track_query.png";
 import arrow from "../assets/arrow-drop-down.svg";
 import youTube from "../assets/icons/youtube-2.svg";
 import instagram from "../assets/icons/instagram.svg";
@@ -10,7 +10,7 @@ import facebook from "../assets/icons/facebook.svg";
 import twitter from "../assets/icons/twitter.svg";
 import linkedIn from "../assets/icons/linkedin.svg";
 
-export default function TrainingMentorship() {
+export default function Track_query() {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
@@ -22,10 +22,8 @@ export default function TrainingMentorship() {
             <Image alt="logo" layout="fill" src={logo} />
           </div>
         </Link>
-        <div className={styles.home__buttons} style={{ width: "13em" }}>
-          <button className={styles.menu__button__plain}>
-            Training & Mentorship
-          </button>
+        <div className={styles.home__buttons}>
+          <button className={styles.menu__button__plain}>Membsership</button>
         </div>
         <div className={styles.query}>
           <div className={styles.name__field}>
@@ -33,9 +31,7 @@ export default function TrainingMentorship() {
             <input className={styles.name__input} />
           </div>
           <div className={styles.query__field}>
-            <div className={styles.query__label}>
-              Training & Mentorship Query
-            </div>
+            <div className={styles.query__label}>Membership Query</div>
             <textarea className={styles.query__input}></textarea>{" "}
           </div>{" "}
           <button className={styles.query__submit}>submit</button>

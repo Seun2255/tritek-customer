@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../styles/technical.module.css";
+import styles from "../styles/commonStyle.module.css";
 import logo from "../assets/logo.png";
 import background from "../assets/technical.png";
 import arrow from "../assets/arrow-drop-down.svg";
@@ -24,6 +24,17 @@ export default function Technical() {
         </Link>
         <div className={styles.home__buttons}>
           <button className={styles.menu__button__plain}>Technical</button>
+        </div>
+        <div className={styles.query}>
+          <div className={styles.name__field}>
+            <div className={styles.name__label}>Name:</div>
+            <input className={styles.name__input} />
+          </div>
+          <div className={styles.query__field}>
+            <div className={styles.query__label}>Technical Query</div>
+            <textarea className={styles.query__input}></textarea>{" "}
+          </div>{" "}
+          <button className={styles.query__submit}>submit</button>
         </div>
       </main>
       <footer className={styles.footer}>
