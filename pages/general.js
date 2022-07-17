@@ -9,8 +9,40 @@ import instagram from "../assets/icons/instagram.svg";
 import facebook from "../assets/icons/facebook.svg";
 import twitter from "../assets/icons/twitter.svg";
 import linkedIn from "../assets/icons/linkedin.svg";
+import { useState, useEffect } from "react";
+import { addQuery } from "./api/API";
+import { useRouter } from "next/router";
+
+var generator = require("generate-password");
 
 export default function General() {
+  const [name, setName] = useState("");
+  const [query, setQuery] = useState("");
+  const router = useRouter();
+
+  const handleSubmit = () => {
+    var firstName = name;
+    var lastName = "";
+
+    var ticket = generator.generate({ length: 10, numbers: true });
+
+    const newQuery = {
+      Comments: query,
+      "First Name": firstName,
+      "Last Name": lastName,
+      Status: "New",
+      Emails: "",
+      "Phone number": "",
+      Location: "",
+      "Query Number": ticket,
+    };
+
+    addQuery(newQuery).then(() => {
+      localStorage.setItem("tracking id", ticket);
+      router.push("/generate_tracking_id");
+    });
+  };
+
   return (
     <div className={styles.container}>
       <main className={styles.main}>
@@ -28,13 +60,25 @@ export default function General() {
         <div className={styles.query}>
           <div className={styles.name__field}>
             <div className={styles.name__label}>Name:</div>
-            <input className={styles.name__input} />
+            <input
+              className={styles.name__input}
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
+            />
           </div>
           <div className={styles.query__field}>
             <div className={styles.query__label}>General Query</div>
-            <textarea className={styles.query__input}></textarea>{" "}
+            <textarea
+              className={styles.query__input}
+              onChange={(e) => {
+                setQuery(e.target.value);
+              }}
+            ></textarea>{" "}
           </div>{" "}
-          <button className={styles.query__submit}>submit</button>
+          <button className={styles.query__submit} onClick={handleSubmit}>
+            submit
+          </button>
         </div>
       </main>
       <footer className={styles.footer}>

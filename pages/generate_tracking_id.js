@@ -9,8 +9,19 @@ import instagram from "../assets/icons/instagram.svg";
 import facebook from "../assets/icons/facebook.svg";
 import twitter from "../assets/icons/twitter.svg";
 import linkedIn from "../assets/icons/linkedin.svg";
+import { useEffect, useState } from "react";
 
 export default function GenerateTrackingId() {
+  const [trackingId, setTrackingId] = useState("");
+
+  useEffect(() => {
+    var id = localStorage.getItem("tracking id");
+    setTrackingId(id);
+    setTimeout(() => {
+      localStorage.clear();
+    }, 100000);
+  }, []);
+
   return (
     <div className={styles.container}>
       <main className={styles.main}>
@@ -23,9 +34,7 @@ export default function GenerateTrackingId() {
           </div>
         </Link>
         <div className={styles.inner__div}>
-          <div className={styles.title}>
-            Generate Tracking ID: TRI2004651229 TEK
-          </div>
+          <div className={styles.title}>Generate Tracking ID: {trackingId}</div>
           <div className={styles.details}>
             Thank you for your query. Please allow up to 48 hrs before tracking.
           </div>

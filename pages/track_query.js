@@ -9,8 +9,27 @@ import instagram from "../assets/icons/instagram.svg";
 import facebook from "../assets/icons/facebook.svg";
 import twitter from "../assets/icons/twitter.svg";
 import linkedIn from "../assets/icons/linkedin.svg";
+import { useState, useEffect } from "react";
+import { getResponses } from "./api/API";
 
 export default function TrackQuery() {
+  const [queries, setQueries] = useState([]);
+  const [trackingId, setTrackingId] = useState("");
+  const [response, setResponse] = useState("");
+  useEffect(() => {
+    getResponses().then((data) => {
+      setQueries(data);
+    });
+  }, []);
+
+  const handleSubmit = () => {
+    queries.map((query) => {
+      if (query["Query Number"] === trackingId) {
+        setResponse(query["Response"]);
+      }
+    });
+  };
+
   return (
     <div className={styles.container}>
       <main className={styles.main}>
@@ -29,13 +48,20 @@ export default function TrackQuery() {
           <div className={styles.query__id}>
             <div className={styles.name__field}>
               <div className={styles.name__label}>Enter query ID:</div>
-              <input className={styles.name__input} />
+              <input
+                className={styles.name__input}
+                onChange={(e) => {
+                  setTrackingId(e.target.value);
+                }}
+              />
             </div>
-            <button className={styles.query__submit}>submit</button>
+            <button className={styles.query__submit} onClick={handleSubmit}>
+              submit
+            </button>
           </div>
           <div className={styles.query__field}>
             <div className={styles.query__label}>Query Response</div>
-            <textarea className={styles.query__input}></textarea>{" "}
+            <div className={styles.query__input}>{response}</div>
           </div>
         </div>
       </main>
