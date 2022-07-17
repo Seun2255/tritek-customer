@@ -18,7 +18,7 @@ export default function GenerateTrackingId() {
     var id = localStorage.getItem("tracking id");
     setTrackingId(id);
     setTimeout(() => {
-      localStorage.clear();
+      localStorage.removeItem("tracking id");
     }, 100000);
   }, []);
 
