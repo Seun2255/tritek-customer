@@ -12,8 +12,10 @@ import instagram from "../assets/icons/instagram.svg";
 import facebook from "../assets/icons/facebook.svg";
 import twitter from "../assets/icons/twitter.svg";
 import linkedIn from "../assets/icons/linkedin.svg";
+import { useState } from "react";
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className={styles.container}>
       <main className={styles.main}>
@@ -24,12 +26,29 @@ export default function Home() {
           <Image alt="logo" layout="fill" src={logo} />
         </div>
         <div className={styles.home__buttons}>
-          <button className={styles.menu__button}>
+          <button
+            className={styles.menu__button}
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
             <span>Menu</span>
             <div className={styles.dropdown__arrow}>
-              <Image alt="arrow" layout="fill" src={arrow} />
+              <Image
+                alt="arrow"
+                layout="fill"
+                src={arrow}
+                style={{
+                  transform: menuOpen ? "rotate(180deg)" : "rotate(0deg)",
+                }}
+              />
             </div>
           </button>
+          {menuOpen && (
+            <div className={styles.menu}>
+              <Link href={"/contact_us"}>
+                <div className={styles.question}>Contact Us</div>
+              </Link>
+            </div>
+          )}
           <button className={styles.support__button}>Live Support</button>
         </div>
       </main>

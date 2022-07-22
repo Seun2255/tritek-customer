@@ -9,7 +9,7 @@ import instagram from "../assets/icons/instagram.svg";
 import facebook from "../assets/icons/facebook.svg";
 import twitter from "../assets/icons/twitter.svg";
 import linkedIn from "../assets/icons/linkedin.svg";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { addQuery } from "./api/API";
 import { useRouter } from "next/router";
 
@@ -35,6 +35,7 @@ export default function General() {
       "Phone number": "",
       Location: "",
       "Query Number": ticket,
+      Type: "General",
     };
 
     addQuery(newQuery).then(() => {

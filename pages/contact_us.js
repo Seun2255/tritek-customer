@@ -23,12 +23,6 @@ export default function Contact() {
           </div>
         </Link>
         <div className={styles.home__buttons}>
-          <button className={styles.menu__button}>
-            <span>Menu</span>
-            <div className={styles.dropdown__arrow}>
-              <Image alt="arrow" layout="fill" src={arrow} />
-            </div>
-          </button>
           <Link href={"/FAQ"}>
             <button className={styles.menu__button}>
               <span>FAQs</span>

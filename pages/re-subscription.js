@@ -9,8 +9,41 @@ import instagram from "../assets/icons/instagram.svg";
 import facebook from "../assets/icons/facebook.svg";
 import twitter from "../assets/icons/twitter.svg";
 import linkedIn from "../assets/icons/linkedin.svg";
+import { addQuery } from "./api/API";
+import { useRouter } from "next/router";
+import { useState } from "react";
 
-export default function Track_query() {
+var generator = require("generate-password");
+
+export default function Re_subscription() {
+  const [name, setName] = useState("");
+  const [query, setQuery] = useState("");
+  const router = useRouter();
+
+  const handleSubmit = () => {
+    var firstName = name;
+    var lastName = "";
+
+    var ticket = generator.generate({ length: 10, numbers: true });
+
+    const newQuery = {
+      Comments: query,
+      "First Name": firstName,
+      "Last Name": lastName,
+      Status: "New",
+      Emails: "",
+      "Phone number": "",
+      Location: "",
+      "Query Number": ticket,
+      Type: "Re-subscription",
+    };
+
+    addQuery(newQuery).then(() => {
+      localStorage.setItem("tracking id", ticket);
+      router.push("/generate_tracking_id");
+    });
+  };
+
   return (
     <div className={styles.container}>
       <main className={styles.main}>
@@ -23,20 +56,37 @@ export default function Track_query() {
           </div>
         </Link>
         <div className={styles.home__buttons}>
-          <button className={styles.menu__button__plain}>
-            Track Query: Eg. TRI2004651229 TEK
+          <button
+            className={styles.menu__button__plain}
+            style={{ width: "9em" }}
+          >
+            Re-subscription
           </button>
         </div>
         <div className={styles.query}>
           <div className={styles.name__field}>
             <div className={styles.name__label}>Name:</div>
-            <input className={styles.name__input} />
+            <input
+              className={styles.name__input}
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
+            />
           </div>
           <div className={styles.query__field}>
-            <div className={styles.query__label}>Re-subscription Query</div>
+            <div
+              className={styles.query__label}
+              onChange={(e) => {
+                setQuery(e.target.value);
+              }}
+            >
+              Re-subscription Query
+            </div>
             <textarea className={styles.query__input}></textarea>{" "}
           </div>{" "}
-          <button className={styles.query__submit}>submit</button>
+          <button className={styles.query__submit} onClick={handleSubmit}>
+            submit
+          </button>
         </div>
       </main>
       <footer className={styles.footer}>

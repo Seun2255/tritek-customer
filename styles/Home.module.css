@@ -49,7 +49,7 @@
   font-size: 16px;
   width: 10em;
   height: 2em;
-  margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .dropdown__arrow {
@@ -60,6 +60,23 @@
   align-items: center;
   justify-content: center;
   border-left: 2px solid #9fc5f8;
+}
+
+.menu {
+  width: 100%;
+  padding: 5px;
+  border: 2px solid #9fc5f8;
+  border-top: none;
+  color: #6fa8dc;
+  font-size: 16px;
+  box-sizing: border-box;
+  background-color: white;
+  z-index: 3;
+}
+
+.question {
+  margin-bottom: 2px;
+  cursor: pointer;
 }
 
 .support__button {
@@ -73,6 +90,9 @@
   border: 3px outset black;
   cursor: pointer;
   width: 60%;
+  position: absolute;
+  top: 3em;
+  left: 0em;
 }
 
 .footer {
