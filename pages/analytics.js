@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/analytics.module.css";
 import logo from "../assets/logo.png";
-import background from "../assets/analytics.png";
+import background from "../assets/analytics.jpg";
 import arrow from "../assets/arrow-drop-down.svg";
 import youTube from "../assets/icons/youtube-2.svg";
 import instagram from "../assets/icons/instagram.svg";
