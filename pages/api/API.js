@@ -25,6 +25,18 @@ const addQuery = async (query) => {
   await setDoc(doc(db, "data", "queries"), { data: queries });
 };
 
+const addFeedback = async (reply) => {
+  var data = {};
+  const querySnapshot = await getDocs(collection(db, "data"));
+  querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    data[doc.id] = doc.data().data;
+  });
+  const feedback = data["feedback"];
+  feedback.push(reply);
+  await setDoc(doc(db, "data", "feedback"), { data: feedback });
+};
+
 const getResponses = async () => {
   var data = {};
   const querySnapshot = await getDocs(collection(db, "data"));
@@ -38,4 +50,4 @@ const getResponses = async () => {
   return queries["Resolved"];
 };
 
-export { addQuery, getResponses };
+export { addQuery, getResponses, addFeedback };

@@ -9,30 +9,52 @@ import instagram from "../assets/icons/instagram.svg";
 import facebook from "../assets/icons/facebook.svg";
 import twitter from "../assets/icons/twitter.svg";
 import linkedIn from "../assets/icons/linkedin.svg";
+import { useState } from "react";
+import { addFeedback } from "./api/API";
 
 export default function Technical() {
+  const [input, setInput] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = () => {
+    addFeedback(input).then(() => {
+      setSubmitted(true);
+    });
+  };
+
   return (
     <div className={styles.container}>
-      <main className={styles.main}>
-        <div className={styles.background__image}>
-          <Image alt="background" layout="fill" src={background} />
+      {submitted ? (
+        <div className={styles.main}>
+          <h1 className={styles.center__text}>Feedback Recorded</h1>
         </div>
-        <Link href={"/"}>
-          <div className={styles.logo}>
-            <Image alt="logo" layout="fill" src={logo} />
+      ) : (
+        <main className={styles.main}>
+          <div className={styles.background__image}>
+            <Image alt="background" layout="fill" src={background} />
           </div>
-        </Link>
-        <div className={styles.home__buttons}>
-          <button className={styles.menu__button__plain}>Feedback</button>
-        </div>
-        <div className={styles.query}>
-          <div className={styles.query__field}>
-            <div className={styles.query__label}>Feedback</div>
-            <textarea className={styles.query__input}></textarea>{" "}
+          <Link href={"/"}>
+            <div className={styles.logo}>
+              <Image alt="logo" layout="fill" src={logo} />
+            </div>
+          </Link>
+          <div className={styles.home__buttons}>
+            <button className={styles.menu__button__plain}>Feedback</button>
           </div>
-          <button className={styles.query__submit}>submit</button>
-        </div>
-      </main>
+          <div className={styles.query}>
+            <div className={styles.query__field}>
+              <div className={styles.query__label}>Feedback</div>
+              <textarea
+                className={styles.query__input}
+                onChange={(e) => setInput(e.target.value)}
+              ></textarea>{" "}
+            </div>
+            <button className={styles.query__submit} onClick={handleSubmit}>
+              submit
+            </button>
+          </div>
+        </main>
+      )}
       <footer className={styles.footer}>
         <div className={styles.social__links}>
           <div className={styles.icon}>
