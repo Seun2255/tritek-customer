@@ -141,4 +141,5 @@
 .home__link {
   text-decoration: underline;
   color: #9fc5f8;
+  cursor: pointer;
 }
