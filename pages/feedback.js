@@ -29,7 +29,7 @@ export default function Technical() {
           <h1 className={styles.center__text}>
             Feedback Recorded,{" "}
             <Link href={"/"} className={styles.home__link}>
-              Return home
+              <span className={styles.home__link}>Return home</span>
             </Link>
           </h1>
         </div>

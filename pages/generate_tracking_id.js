@@ -40,7 +40,7 @@ export default function GenerateTrackingId() {
           <div className={styles.details}>
             Thank you for your query. Please allow up to 48 hrs before tracking.{" "}
             <Link href={"/"} className={styles.home__link}>
-              Return home
+              <span className={styles.home__link}>Return home</span>
             </Link>
           </div>
         </div>
