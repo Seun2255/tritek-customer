@@ -137,3 +137,8 @@
   font-weight: 600;
   margin-top: 10px;
 }
+
+.home__link {
+  text-decoration: underline;
+  color: #9fc5f8;
+}

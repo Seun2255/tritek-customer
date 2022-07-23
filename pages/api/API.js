@@ -10,6 +10,7 @@ import {
 } from "firebase/firestore";
 import { async } from "@firebase/util";
 import querySorter from "../../utils/querySorter";
+import { timeStamp } from "../../utils/dateFunctions";
 
 const db = getFirestore(app);
 
@@ -21,7 +22,10 @@ const addQuery = async (query) => {
     data[doc.id] = doc.data().data;
   });
   const queries = data["queries"];
-  queries.push(query);
+  var time = new Date();
+  var formattedQuery = query;
+  formattedQuery.created = timeStamp(time);
+  queries.push(formattedQuery);
   await setDoc(doc(db, "data", "queries"), { data: queries });
 };
 

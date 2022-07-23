@@ -26,7 +26,12 @@ export default function Technical() {
     <div className={styles.container}>
       {submitted ? (
         <div className={styles.main}>
-          <h1 className={styles.center__text}>Feedback Recorded</h1>
+          <h1 className={styles.center__text}>
+            Feedback Recorded,{" "}
+            <Link href={"/"} className={styles.home__link}>
+              Return home
+            </Link>
+          </h1>
         </div>
       ) : (
         <main className={styles.main}>

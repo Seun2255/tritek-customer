@@ -34,9 +34,14 @@ export default function GenerateTrackingId() {
           </div>
         </Link>
         <div className={styles.inner__div}>
-          <div className={styles.title}>Generate Tracking ID: {trackingId}</div>
+          <div className={styles.title}>
+            Generated Tracking ID: {trackingId}
+          </div>
           <div className={styles.details}>
-            Thank you for your query. Please allow up to 48 hrs before tracking.
+            Thank you for your query. Please allow up to 48 hrs before tracking.{" "}
+            <Link href={"/"} className={styles.home__link}>
+              Return home
+            </Link>
           </div>
         </div>
       </main>
