@@ -28,6 +28,7 @@ export default function TrackQuery() {
         setResponse(query["Response"]);
       }
     });
+    console.log(response);
     if (response === "") setResponse("Query in progress, check back later");
   };
 

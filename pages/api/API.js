@@ -50,7 +50,6 @@ const getResponses = async () => {
   });
   var queries = data["queries"];
   queries = querySorter(queries);
-  console.log(queries["Resolved"]);
   return queries["Resolved"];
 };
 
