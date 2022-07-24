@@ -23,13 +23,18 @@ export default function TrackQuery() {
   }, []);
 
   const handleSubmit = () => {
+    console.log(queries);
     queries.map((query) => {
-      if (query["Query Number"] === trackingId) {
+      if (query["Query Number"] == trackingId) {
         setResponse(query["Response"]);
       }
     });
-    console.log(response);
-    if (response === "") setResponse("Query in progress, check back later");
+    setTimeout(() => {
+      console.log(response);
+      if (response === "") {
+        setResponse("Query in progress, check back later");
+      }
+    }, 1000);
   };
 
   return (
