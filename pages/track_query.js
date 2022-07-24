@@ -15,7 +15,8 @@ import { getResponses } from "./api/API";
 export default function TrackQuery() {
   const [queries, setQueries] = useState([]);
   const [trackingId, setTrackingId] = useState("");
-  const [response, setResponse] = useState("");
+  const [response, setResponse] = useState(false);
+  const [showResponse, setShowResponse] = useState(false);
   useEffect(() => {
     getResponses().then((data) => {
       setQueries(data);
@@ -23,18 +24,12 @@ export default function TrackQuery() {
   }, []);
 
   const handleSubmit = () => {
-    console.log(queries);
     queries.map((query) => {
       if (query["Query Number"] == trackingId) {
         setResponse(query["Response"]);
       }
     });
-    setTimeout(() => {
-      console.log(response);
-      if (response === "") {
-        setResponse("Query in progress, check back later");
-      }
-    }, 1000);
+    setShowResponse(true);
   };
 
   return (
@@ -68,7 +63,10 @@ export default function TrackQuery() {
           </div>
           <div className={styles.query__field}>
             <div className={styles.query__label}>Query Response</div>
-            <div className={styles.query__input}>{response}</div>
+            <div className={styles.query__input}>
+              {showResponse &&
+                (response ? response : "Query in progress, check back later")}
+            </div>
           </div>
         </div>
       </main>
