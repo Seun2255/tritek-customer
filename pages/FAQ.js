@@ -34,33 +34,16 @@ export default function FAQ() {
           </div>
         </Link>
         <div className={styles.home__buttons}>
-          <button
-            className={styles.menu__button}
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            <span>FAQs</span>
-            <div className={styles.dropdown__arrow}>
-              <Image
-                alt="arrow"
-                layout="fill"
-                src={arrow}
-                style={{
-                  transform: menuOpen ? "rotate(180deg)" : "rotate(0deg)",
-                }}
-              />
-            </div>
-          </button>
-          {menuOpen && (
-            <div className={styles.menu}>
-              {questions.map((question, id) => {
-                return (
-                  <div key={id} className={styles.question}>
-                    {question}
-                  </div>
-                );
-              })}
-            </div>
-          )}
+          <div className={styles.menu__button}>FAQ</div>
+          <div className={styles.menu}>
+            {questions.map((question, id) => {
+              return (
+                <div key={id} className={styles.question}>
+                  {question}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </main>
       <footer className={styles.footer}>

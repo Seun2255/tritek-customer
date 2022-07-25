@@ -26,10 +26,15 @@ export default function Technical() {
     <div className={styles.container}>
       {submitted ? (
         <div className={styles.main}>
+          <div className={styles.background__image}>
+            <Image alt="background" layout="fill" src={background} />
+          </div>
           <h1 className={styles.center__text}>
-            Feedback Recorded,{" "}
+            Thank you for your feedback.{" "}
             <Link href={"/"} className={styles.home__link}>
-              <span className={styles.home__link}>Return home</span>
+              <span className={styles.home__link} style={{ color: "white" }}>
+                Return to Home page
+              </span>
             </Link>
           </h1>
         </div>
