@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import logo from "../assets/logo.png";
-import background from "../assets/home.jpg";
+import background from "../assets/home.png";
 import arrow from "../assets/arrow-drop-down.svg";
 import phone from "../assets/icons/phone.svg";
 import location from "../assets/icons/location.svg";

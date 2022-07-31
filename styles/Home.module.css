@@ -8,7 +8,7 @@
 }
 
 .main {
-  height: 60%;
+  height: 75%;
   width: 100%;
   position: relative;
 }
@@ -116,7 +116,8 @@
   text-decoration: underline;
   font-weight: 600;
   font-family: sans-serif;
-  line-height: 24px;
+  font-size: 14px;
+  line-height: 20px;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -141,7 +142,6 @@
 .copyright {
   align-self: flex-start;
   margin-left: 15%;
-  margin-top: 10px;
   height: 24px;
   display: flex;
   align-items: center;
